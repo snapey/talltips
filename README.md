@@ -1,5 +1,7 @@
 # What is TALL Stack
 
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+
 TALL stack describes applications with a preference for the following components;
 
 * [Tailwind](https://tailwindcss.com/) - CSS Utility Framework

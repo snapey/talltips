@@ -136,3 +136,7 @@ $invoiceNumber = sprintf('R%s/%s-%04u', $year, $year+1, $current);
 Grateful to @swaz at Laracasts for helping with this.  You can read the full thread and how we arrived at the solution here;
 
 {% embed url="https://laracasts.com/discuss/channels/laravel/generating-unique-invoice-number-based-on-financial-yesr" %}
+
+{% hint style="info" %}
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+{% endhint %}

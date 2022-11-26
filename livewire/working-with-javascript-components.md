@@ -26,3 +26,7 @@ When using Bootstrap date picker, just using wire:model on the field is not goin
 Livewire is looking for an input event to know that the field is dirty. The date picker seems to not trigger any input events, but it does trigger a regular input onchange event. We can hook into this and dispatch an input event. This causes Livewire to sync the field with the server.
 
 This strategy may work with other similar components.
+
+{% hint style="info" %}
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+{% endhint %}

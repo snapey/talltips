@@ -126,3 +126,8 @@ Again, we don't need to care about the `old()` helper or the `checked` state
 With Livewire2, you should be wary of a user manipulating the public properties of your component, such as changing the user\_id to that of another user.  Check the video;
 
 {% embed url="https://www.youtube.com/watch?v=bA1dMbUiwuA" %}
+
+{% hint style="info" %}
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+{% endhint %}
+

@@ -41,3 +41,7 @@ When using [Jetstream Teams](https://jetstream.laravel.com/2.x/features/teams.ht
         return $this->allUsers()->pluck('name','email');
     }
 ```
+
+{% hint style="info" %}
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+{% endhint %}
