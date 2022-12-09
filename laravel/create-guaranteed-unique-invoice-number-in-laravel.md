@@ -70,9 +70,9 @@ see: [https://freek.dev/1087-breaking-laravels-firstorcreate-using-race-conditio
 The preferred approach is instead as below;
 
 ```php
-$year = $dt->format('Y');
+$fy = $dt->format('Y');
 
-DB::statement("INSERT INTO invoice_sequences (fy) VALUES ({$year}) ON DUPLICATE KEY UPDATE year = year, id=LAST_INSERT_ID(id)");
+DB::statement("INSERT INTO invoice_sequences (fy) VALUES ({$fy}) ON DUPLICATE KEY UPDATE fy = fy, id=LAST_INSERT_ID(id)");
     
 $lastInsertId = DB::getPDO()->lastInsertId();
 ```
@@ -120,10 +120,10 @@ if($dt > today()) {
  $dt->subYear(1);
 }
 
-$year = $dt->format('Y');
+$fy = $dt->format('Y');
 
 // ensure there is a record for the current financial year
-DB::statement("INSERT INTO invoice_sequences (fy) VALUES ({$year}) ON DUPLICATE KEY UPDATE year = year, id=LAST_INSERT_ID(id)");
+DB::statement("INSERT INTO invoice_sequences (fy) VALUES ({$fy}) ON DUPLICATE KEY UPDATE fy = fy, id=LAST_INSERT_ID(id)");
 $lastInsertId = DB::getPDO()->lastInsertId();
 
 // automatically increment the count AND get the value
