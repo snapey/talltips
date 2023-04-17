@@ -45,6 +45,7 @@
 * [Using Queues on Shared Hosting with Laravel](laravel/using-queues-on-shared-hosting-with-laravel.md)
 * [Create Guaranteed Unique Invoice Number in Laravel](laravel/create-guaranteed-unique-invoice-number-in-laravel.md)
 * [Send Notification to all team members](laravel/send-notification-to-all-team-members.md)
+* [Protect Staging site with Basic Auth](laravel/protect-staging-site-with-basic-auth.md)
 * [PHP DateTime formatting cribsheet](laravel/php-datetime-formatting-cribsheet.md)
 
 ## Livewire
