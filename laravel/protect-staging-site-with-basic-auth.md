@@ -76,14 +76,14 @@ If the app environment is NOT staging then the middleware is skipped and has no 
 
 ### Add middleware to the 'web' group
 
-Add the middleware to the array of $middlewaregroups (Laravel 10) / $routeMiddleware (earlier).
+Add the middleware to the array of `$middlewaregroups` (Laravel 10) / `$routeMiddleware` (earlier).
 
 ```php
             \App\Http\Middleware\StagingBasicAuth::class,
             
 ```
 
-When \`APP\_ENV = staging\` no content from the site will be accessible without first logging in.
+When `APP_ENV = staging` no content from the site will be accessible without first logging in.
 
 ### Setting Credentials
 
