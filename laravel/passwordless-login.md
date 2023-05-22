@@ -97,7 +97,7 @@ Here, the password field is commented out of the validation, and the password ad
 
 ![](../.gitbook/assets/sixtbanner.jpg)
 
-_Article sponsored by_ [_SixTokens.com_](https://sixtokens.com)__
+_Article sponsored by_ [_SixTokens.com_](https://sixtokens.com)
 
 ## Create a source of pass-phrases
 

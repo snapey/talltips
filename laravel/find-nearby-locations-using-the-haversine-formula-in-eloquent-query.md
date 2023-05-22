@@ -57,6 +57,6 @@ References:
 *
 
 {% hint style="info" %}
-**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)
 {% endhint %}
 

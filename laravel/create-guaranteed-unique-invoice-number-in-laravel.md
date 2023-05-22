@@ -138,5 +138,5 @@ Grateful to @swaz at Laracasts for helping with this.  You can read the full thr
 {% embed url="https://laracasts.com/discuss/channels/laravel/generating-unique-invoice-number-based-on-financial-yesr" %}
 
 {% hint style="info" %}
-**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)
 {% endhint %}

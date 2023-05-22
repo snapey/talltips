@@ -6,6 +6,7 @@
 
 * [Tailwind Resources](tailwind/tailwind-resources.md)
 * [Swinging Bell Notification Icon](tailwind/swinging-bell-notification-icon.md)
+* [Styled Unordered Lists](tailwind/styled-unordered-lists.md)
 
 ## Alpine
 

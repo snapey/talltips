@@ -128,6 +128,6 @@ With Livewire2, you should be wary of a user manipulating the public properties 
 {% embed url="https://www.youtube.com/watch?v=bA1dMbUiwuA" %}
 
 {% hint style="info" %}
-**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)****
+**You can discuss pages on this site at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)
 {% endhint %}
 
