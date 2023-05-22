@@ -18,5 +18,5 @@ To provided colored bullets, and indented list items use the following classes o
 
 `space-y-4` to add vertical spacing between all the `ul` children
 
-`marker:text-red-700` sets the color of the disk element
+`marker:text-red-700` sets the color of the disc element
 
