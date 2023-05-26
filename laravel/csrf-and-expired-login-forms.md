@@ -23,3 +23,5 @@ There is a very small chance that the user goes away and comes back after 1 hour
 {% hint style="info" %}
 Note that this reload will cause some small additional view count in your analytics&#x20;
 {% endhint %}
+
+<figure><img src="../.gitbook/assets/battle-ready-laravel-horizontal-banner-image.png" alt=""><figcaption><p>Affiliate Link</p></figcaption></figure>
