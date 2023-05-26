@@ -67,3 +67,7 @@ If this is the case then we add `'logout'` to the except array.  We then pass co
 The user sees no error page.
 
 By checking in this way, we ensure that valid logout requests by authenticated users are still protected by CSRF Token and that those with expired sessions do not see the 419 error.
+
+<figure><img src="../.gitbook/assets/battle-ready-laravel-horizontal-banner-image.png" alt=""><figcaption><p>Affiliate Link</p></figcaption></figure>
+
+Support the talltips site by purchasing Ash Allen's excellent book [via this link](https://ashallen.lemonsqueezy.com/?aff=1O08w)

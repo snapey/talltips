@@ -164,3 +164,7 @@ class Dropdowns extends Component
 ### **Conclusion**
 
 Livewire makes it super easy to provide areas of your web application front-end that can interact directly with your backend without writing any API or Javascript. It requires a bit of a mind shift in the way you think about how applications should be built. I’m a fan!
+
+<figure><img src="../.gitbook/assets/battle-ready-laravel-horizontal-banner-image.png" alt=""><figcaption><p>Affiliate Link</p></figcaption></figure>
+
+Support the talltips site by purchasing Ash Allen's excellent book [via this link](https://ashallen.lemonsqueezy.com/?aff=1O08w)
