@@ -25,3 +25,5 @@ Note that this reload will cause some small additional view count in your analyt
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/battle-ready-laravel-horizontal-banner-image.png" alt=""><figcaption><p>Affiliate Link</p></figcaption></figure>
+
+Support the talltips site by purchasing Ash Allen's excellent book [via this link](https://ashallen.lemonsqueezy.com/?aff=1O08w)
