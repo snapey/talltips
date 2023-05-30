@@ -1,8 +1,12 @@
 ---
-description: How to provide different redirects at login when using Laravel Fortify
+description: >-
+  How to provide different redirects at login when using Laravel Fortify and
+  Jetstream
 ---
 
-# Laravel 8 Conditional Login Redirect
+# Jetstream Login Conditional Redirect
+
+#### ✅ Checked works with Laravel 10
 
 Laravel 8 introduces [Fortify](https://github.com/laravel/fortify), a new back-end package for providing user authentication services. This represents a big departure from the **controller with traits** approach used in previous versions and has caused some concern that the authentication process is no longer customisable.
 
@@ -38,6 +42,31 @@ class LoginResponse implements LoginResponseContract
         return $request->wantsJson()
                     ? response()->json(['two_factor' => false])
                     : redirect()->intended(config('fortify.home'));
+    }
+
+}
+```
+
+For Example
+
+```php
+<?php
+
+namespace App\Http\Responses;
+
+use Illuminate\Support\Facades\Auth;
+use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
+
+class LoginResponse implements LoginResponseContract
+{
+
+    public function toResponse($request)
+    {
+        return $request->wantsJson()
+                    ? response()->json(['two_factor' => false])
+                    : redirect()->intended(
+                        auth()->user()->is_admin ? route('admin.dashboard') : route('dashboard')
+                    );
     }
 
 }
