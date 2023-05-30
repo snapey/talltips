@@ -6,6 +6,8 @@ description: >-
 
 # Laravel Breeze Login Conditional Redirect
 
+#### ✅ Checked works with Laravel 10
+
 When using Breeze and having users with different roles (eg customer / administrator), you might want to redirect the user once they have authenticated.
 
 With Breeze this is fairly simple since the authentication process is performed in the user's App and can be easily modified.
