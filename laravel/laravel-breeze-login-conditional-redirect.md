@@ -12,7 +12,7 @@ When using Breeze and having users with different roles (eg customer / administr
 
 With Breeze this is fairly simple since the authentication process is performed in the user's App and can be easily modified.
 
-Locate the file App\Http\Controllers\Auth\AuthenticatedSessionController
+Locate the file app/Http/Controllers/Auth/AuthenticatedSessionController.php
 
 Replace the last line of the `store()` method with your redirect logic. For example;
 
