@@ -24,6 +24,7 @@
 * [Password-less Login with Laravel 8](laravel/passwordless-login.md)
 * [Password-less Login with Magic Link in Laravel 8](laravel/password-less-login-with-magic-link-in-laravel-8.md)
 * [Laravel Resources](laravel/laravel-resources.md)
+* [Laravel Breeze Login Conditional Redirect](laravel/laravel-breeze-login-conditional-redirect.md)
 * [Jetstream Login Conditional Redirect](laravel/laravel-8-conditional-login-redirects.md)
 * [Simplify Laravel CRUD Controllers](laravel/simplify-laravel-crud-controllers.md)
 * [CSRF and expired login forms](laravel/csrf-and-expired-login-forms.md)
