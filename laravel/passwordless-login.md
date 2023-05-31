@@ -79,7 +79,7 @@ public function create(array $input)
     Validator::make($input, [
         'name' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        // 'password' => ['required', 'string', new Password, 'confirmed'],
+         // 'password' => $this->passwordRules(),
     ])->validate();
 
     return User::create([
@@ -176,7 +176,7 @@ Our wordlist is approximately 4100 words, so 3 words is  4100x4100x4100/2 = 34,4
 
 ### Bind our Listener to Events
 
-Listening for events is configured in the app\Providers\EventServiceProvider.  We add our listener for the two events.
+Listening for events is configured in the app\Providers\EventServiceProvider.  We add our listener for the two events.  We can remove the email verification listener as if the user can receive the passcode then they verified the email at the same time.
 
 {% code title="app/Providers/EventServiceProvider.php" %}
 ```php
@@ -353,15 +353,15 @@ The easiest route with a new application is to just copy the Login view and edit
 {% code title="resources/views/auth/passphrase.blade.php" %}
 ```php
 <x-guest-layout>
-    <x-jet-authentication-card>
+    <x-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <x-authentication-card-logo />
         </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
+        <x-validation-errors class="mb-4" />
 
         @if (session('status'))
-            <div class="mb-4 text-sm font-medium text-green-600">
+            <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
             </div>
         @endif
@@ -370,17 +370,17 @@ The easiest route with a new application is to just copy the Login view and edit
             @csrf
 
             <div>
-                <x-jet-label value="Pass-phrase" for="passphrase" />
-                <x-jet-input class="block w-full mt-1" type="text" name="passphrase" :value="old('passphrase')" required autofocus />
+                <x-label value="Pass-phrase" for="passphrase" />
+                <x-input class="block w-full mt-1" type="text" name="passphrase" :value="old('passphrase')" required autofocus />
             </div>
             
             <div class="flex items-center justify-end mt-4">
-                <x-jet-button class="ml-4">
+                <x-button class="ml-4">
                      Confirm
-                </x-jet-button>
+                </x-button>
             </div>
         </form>
-    </x-jet-authentication-card>
+    </x-authentication-card>
 </x-guest-layout>
 
 ```
@@ -453,7 +453,7 @@ class PassPhraseGuard
 
 Include the new middleware in your web middleware stack
 
-{% code title="app/Http/Kernel.php" %}
+{% code title="app/Http/Kernel.php" lineNumbers="true" %}
 ```php
     protected $middlewareGroups = [
         'web' => [
@@ -466,8 +466,6 @@ Include the new middleware in your web middleware stack
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\PassPhraseGuard::class,
         ],
-
-
 ```
 {% endcode %}
 
