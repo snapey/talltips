@@ -2,7 +2,9 @@
 description: Create a pass-phrase or 'magic-link' login system for Laravel 8 and Jetstream
 ---
 
-# Password-less Login with Laravel 8
+# Password-less Login with Laravel 8+
+
+#### ✅ Checked works with Laravel 10
 
 ## Introduction
 
