@@ -505,4 +505,4 @@ In this article we created a password-less login process that uses a **pass-phra
 
 ## Feedback
 
-If you have any suggestions how this article can be improved, DM the author on Twitter [@snapey](https://twitter.com/snapey)
+If you have any suggestions how this article can be improved, **contribute to discussion at** [**https://github.com/snapey/talltips/discussions**](https://github.com/snapey/talltips/discussions)
