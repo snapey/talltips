@@ -1,8 +1,12 @@
 ---
-description: Using Laravel 10 with Breeze starter kit
+description: Using Laravel 10 with Breeze + Blade starter kit
 ---
 
 # Show custom page when email verification link expired
+
+{% hint style="info" %}
+For Breeze + Livewire + Alpine starter kit, see the section at the end
+{% endhint %}
 
 This is how you might change the default breeze installation to show a custom page when the signature in an account verification email has expired;
 
@@ -80,6 +84,10 @@ Create a new route in auth.php
 ```
 
 This adds a new route that can show our new page.
+
+### For Breeze with Livewire+Alpine
+
+The main difference to the above process is that the view to copy is located in resources/views/livewire/pages/auth/verify-email.blade.php
 
 
 
