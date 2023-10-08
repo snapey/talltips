@@ -31,6 +31,7 @@
 * [CSRF and expired logout forms](laravel/csrf-and-expired-logout-forms.md)
 * [Add your own logo to Laravel Mail](laravel/add-your-own-logo-to-laravel-mail.md)
 * [Specify a different mail theme for Notifications](laravel/specify-a-different-mail-theme-for-notifications.md)
+* [Show custom page when email verification link expired](laravel/show-custom-page-when-email-verification-link-expired.md)
 * [Using a mutator to save currency](laravel/using-a-mutator-to-save-currency.md)
 * [Using Spatie Valuestore to hold frequently accessed settings](laravel/using-spatie-valuestore-to-hold-frequently-accessed-settings.md)
 * [Using the old() helper](laravel/using-the-old-helper.md)
