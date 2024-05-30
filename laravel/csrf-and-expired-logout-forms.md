@@ -18,6 +18,7 @@ Laravel 11 removes the Http/Middleware folder and the option to add in extra log
 
 Add the following file into a new app/Http/Middleware folder
 
+{% code title="CheckCsrf.php" %}
 ```php
 <?php
 
@@ -51,10 +52,11 @@ class CheckCsrf extends ValidateCsrfToken
     }
 }
 ```
+{% endcode %}
 
 Then add the following into the bootstrap/app.php file
 
-{% code title="CheckCsrf.php" %}
+{% code title="" %}
 ```php
 ->withMiddleware(function (Middleware $middleware) {
         $middleware->web(replace: [
