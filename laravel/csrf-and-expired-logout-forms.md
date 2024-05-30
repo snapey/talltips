@@ -54,6 +54,7 @@ class CheckCsrf extends ValidateCsrfToken
 
 Then add the following into the bootstrap/app.php file
 
+{% code title="CheckCsrf.php" %}
 ```php
 ->withMiddleware(function (Middleware $middleware) {
         $middleware->web(replace: [
@@ -62,6 +63,7 @@ Then add the following into the bootstrap/app.php file
         ]);
     })
 ```
+{% endcode %}
 
 Here the framework supplied middleware is swapped for our version
 
