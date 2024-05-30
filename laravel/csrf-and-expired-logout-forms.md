@@ -12,6 +12,66 @@ A problem with the CSRF token in the logout form is that it can become stale in 
 2. User has a single tab open but leaves the site and does not return during the session duration. The CSRF token is then stale and pressing logout gives 419 error.
 3. The user uses the option to close all sessions on other devices. Logout on a terminated session will generate the error.
 
+### Laravel 11+ solution
+
+Laravel 11 removes the Http/Middleware folder and the option to add in extra logic.  The solution is to replace the ValidateCsrfMiddleware with a class that performs the same function, but adds the logout route to the except array so that when a guest user logs out, the token is not checked.
+
+Add the following file into a new app/Http/Middleware folder
+
+````php
+```php
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
+use Illuminate\Support\Facades\Auth;
+
+class CheckCsrf extends ValidateCsrfToken
+{
+
+    protected $except = [
+        // other routes that need excepting
+        'stripe/*',
+    ];
+
+    public function handle($request, Closure $next): Response
+    {
+        if($request->route()->named('logout')) {
+
+            if (!Auth::check() || Auth::guard()->viaRemember()) {
+
+                $this->except[] = 'logout';
+                
+            }   
+        }
+
+        return parent::handle($request, $next);
+    }
+}
+
+```
+````
+
+Then add the following into the bootstrap/app.php file
+
+````php
+```php
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->web(replace: [
+            Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class =>
+            App\Http\Middleware\CheckCsrf::class
+        ]);
+    })
+```
+````
+
+Here the framework supplied middleware is swapped for our version
+
+### Laravel 8 to 10 solution
+
 A solution to the problem is relatively simple, and requires a small addition to the VerifyCsrfToken middleware;
 
 {% code title="app/Http/Middleware/VerifyCsrfToken.php" %}
@@ -55,6 +115,8 @@ class VerifyCsrfToken extends Middleware
 {% endcode %}
 
 Normally this file contains just an `$except` array of routes that should be ignored from csrf.
+
+### How does this help?
 
 In this code we override the handle method and perform three checks.&#x20;
 
