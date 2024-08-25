@@ -10,7 +10,7 @@ When working with enums, its handy to reference them statically such as when aut
 
 Personally, I find it clumsy to have to access the Enum static method such as&#x20;
 
-&#x20;   `$this->authorize(Role::MANAGER->name());`
+&#x20;   `$this->authorize(Role::MANAGER->name);`
 
 With a tiny function we can simplify this to
 
@@ -40,8 +40,9 @@ enum Expenses
 
     throw_unless($case, 'Missing Enum Case');
 
-    return $case instanceof BackedEnum ? $case->value : $case->name;
-  }
+    return empty($case->value) ? $case->name : $case->value;
+
+}
 
 ```
 {% endcode %}
@@ -83,4 +84,51 @@ Expenses::CREATE_EXPENSE()   // 1
 ```
 
 The method returns the name or the value, depending on whether your enum is backed.
+
+### Make a Trait
+
+Since the function is not dedicated to any specific enum, you can create a trait and include it in every enum class.
+
+{% code title="App\Enums\Traits" %}
+```php
+<?php
+
+namespace App\Enums\Traits;
+
+use Illuminate\Support\Arr;
+
+trait Invokable
+{
+    public static function __callStatic($name, $args)
+    {
+      $case = Arr::first(static::cases(), fn($case) => $case->name === $name);
+  
+      throw_unless($case, 'Missing Enum Case');
+  
+      return empty($case->value) ? $case->name : $case->value;
+
+    }
+}
+```
+{% endcode %}
+
+And then use in every enum
+
+```php
+<?php
+
+namespace App\Enums;
+
+use App\Enums\Traits\Invokable;
+
+enum Expenses:string
+{
+    use Invokable;
+    
+    case CREATE_EXPENSE = 'can create expense';
+    case DELETE_EXPENSE = 'can delete expense';
+    case APPROVE_EXPENSE = 'can approve expense';
+
+}
+```
 
