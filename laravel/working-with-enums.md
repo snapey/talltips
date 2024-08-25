@@ -41,7 +41,7 @@ enum Expenses
     throw_unless($case, sprintf('Undefined Enum Case %s::%s',static::class,$name));
     
     return empty($case->value) ? $case->name : $case->value;
-
+  }
 }
 
 ```
