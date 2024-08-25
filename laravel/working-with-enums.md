@@ -132,3 +132,57 @@ enum Expenses:string
 }
 ```
 
+## Enum methods
+
+Enums are not like normal classes, but they do still allow public methods which may be called against a given Enum case.
+
+For Instance;
+
+### Returning an icon component for a case
+
+```php
+    public function icon()
+    {
+        return match($this) {
+            self::CREATE_EXPENSE => '<x-icons-create-expense />',
+            self::DELETE_EXPENSE => '<x-icons-delete-expense />',
+            self::APPROVE_EXPENSE => '<x-icons-approve-expense />',
+        };
+    }
+```
+
+The match statement is very useful for this type of thing and allows an easy way to return different data for each case.
+
+### Returning a long block of text
+
+```php
+    public function longDescription()
+    {
+        return match($this) {
+            self::CREATE_EXPENSE => $this->createDescription(),
+            self::DELETE_EXPENSE => $this->deleteDescription(),
+            self::APPROVE_EXPENSE => $this->approveDescription(),
+        };
+    }
+
+    private function createDescription()
+    {
+        return "A user with this permission is allowed to create expense records for approval by the accounting team";
+    }
+```
+
+And then use it in blade like
+
+```php
+{{ Expenses::APPROVE_EXPENSE->longDescription() }}
+```
+
+Or if you are already working with an instance of an enum
+
+```php
+{{ $permission->longDescription() }}
+```
+
+{% hint style="info" %}
+If you are having problems with using enum classes directly in your blade files, dont forget that you can import the class at the top of your blade file with `@use('\App\Enums\Expenses')`
+{% endhint %}
