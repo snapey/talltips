@@ -38,8 +38,8 @@ enum Expenses
   {
     $case = Arr::first(static::cases(), fn($case) => $case->name === $name);
 
-    throw_unless($case, 'Missing Enum Case');
-
+    throw_unless($case, sprintf('Undefined Enum Case %s::%s',static::class,$name));
+    
     return empty($case->value) ? $case->name : $case->value;
 
 }
@@ -103,7 +103,7 @@ trait Invokable
     {
       $case = Arr::first(static::cases(), fn($case) => $case->name === $name);
   
-      throw_unless($case, 'Missing Enum Case');
+      throw_unless($case, sprintf('Undefined Enum Case %s::%s',static::class,$name));
   
       return empty($case->value) ? $case->name : $case->value;
 
